@@ -16,6 +16,7 @@ class ECommerceApp extends StatelessWidget {
 
       builder: (_, child) {
         return MaterialApp(
+          title: "Development",
           debugShowCheckedModeBanner: false,
 
           initialRoute: Routes.onboarding,
