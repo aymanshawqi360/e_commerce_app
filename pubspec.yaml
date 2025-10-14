@@ -38,6 +38,9 @@ dependencies:
   flutter_svg: ^2.2.1
   # plugin for adapting screen and font size
   flutter_screenutil: ^5.9.3
+  # white native splash screen with background color and splash image. Supports dark mode,
+  flutter_native_splash: ^2.4.6
+
 
 
 
@@ -65,7 +68,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/image/
+    - assets/images/
     - assets/svg/
 
   # An image asset can refer to one or more resolution-specific "variants", see
