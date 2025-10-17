@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/core/routing/routes.dart';
+import 'package:e_commerce_app/features/auth/presentation/screen/login_screen.dart';
 import 'package:e_commerce_app/features/onboarding/presentation/screen/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -7,6 +8,8 @@ class AppRoute {
     switch (routeSettings.name) {
       case Routes.onboarding:
         return MaterialPageRoute(builder: (_) => OnboardingScreen());
+      case Routes.login:
+        return MaterialPageRoute(builder: (_) => LoginScreen());
 
       default:
         deafultScreen();

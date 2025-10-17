@@ -18,10 +18,28 @@ class TextStyles {
     fontFamily: StringManager.satoshiMedium,
   );
 
-  static TextStyle font15WihteMedium = TextStyle(
-    color: Color(0xffFBFBFC),
+  static TextStyle font15WhiteMedium = TextStyle(
+    color: ColorsManager.white,
     fontSize: 15.sp,
     fontWeight: FontWeightHelper.medium,
+    fontFamily: StringManager.satoshiMedium,
+  );
+  static TextStyle font13SoftGrayRegular = TextStyle(
+    color: ColorsManager.softGray,
+    fontSize: 13.sp,
+    fontWeight: FontWeightHelper.regular,
+    fontFamily: StringManager.satoshiMedium,
+  );
+  static TextStyle font24BlackBold = TextStyle(
+    color: ColorsManager.black,
+    fontSize: 24.sp,
+    fontWeight: FontWeightHelper.bold,
+    fontFamily: StringManager.satoshiMedium,
+  );
+  static TextStyle font16WhiteBold = TextStyle(
+    color: ColorsManager.white,
+    fontSize: 13.sp,
+    fontWeight: FontWeightHelper.bold,
     fontFamily: StringManager.satoshiMedium,
   );
 }

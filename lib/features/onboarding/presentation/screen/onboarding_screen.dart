@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/core/routing/routes.dart';
 import 'package:e_commerce_app/core/util/assets_manager.dart';
 import 'package:e_commerce_app/core/util/extension.dart';
 import 'package:e_commerce_app/core/util/string_manager.dart';
@@ -43,7 +44,13 @@ class OnboardingScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 62.h),
 
-                  AppButton(buttinName: StringManager.getStarted),
+                  AppButton(
+                    buttinName: StringManager.getStarted,
+                    onTap: () => context.pushNamedAndRemoveUntil(
+                      Routes.login,
+                      predicate: (_) => false,
+                    ),
+                  ),
                 ],
               ),
             ),
