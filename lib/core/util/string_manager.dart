@@ -9,4 +9,11 @@ class StringManager {
   static const String email = "Email";
   static const String password = "Password";
   static const String login = "Login";
+  static const String signUp = "SignUp";
+  static const String confirmPassword = "Confirm Password";
+  static const String signupwithEmail = "Signup with Email";
+  static const String termsCondition = "Terms & Condition";
+  static const String agreeWith = "Agree with";
+  static const String alreadyHaveAnAccount = "Already have an account?\t";
+  static const String dontHaveAnAccount = "Don't have an account?\t";
 }
