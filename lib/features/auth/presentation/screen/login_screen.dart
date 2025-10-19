@@ -1,9 +1,11 @@
 import 'package:e_commerce_app/core/functions/spacing.dart';
+import 'package:e_commerce_app/core/routing/routes.dart';
 import 'package:e_commerce_app/core/util/colors_manager.dart';
 import 'package:e_commerce_app/core/util/extension.dart';
 import 'package:e_commerce_app/core/util/string_manager.dart';
 import 'package:e_commerce_app/core/util/style.dart';
 import 'package:e_commerce_app/core/widgets/app_button.dart';
+import 'package:e_commerce_app/core/widgets/app_rich_text.dart';
 import 'package:e_commerce_app/core/widgets/app_test_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -27,7 +29,7 @@ class _LoginScreenState extends State<LoginScreen>
 
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 3),
+      duration: Duration(seconds: 2),
     );
 
     _slideAnimation = Tween<Offset>(
@@ -64,63 +66,74 @@ class _LoginScreenState extends State<LoginScreen>
               top: context.screenHeight / 10,
             ),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Align(
-                  alignment: AlignmentDirectional.centerStart,
-                  child: Text(
-                    StringManager.loginWithEmail,
-                    style: TextStyles.font24BlackBold,
-                  ),
-                ),
-
-                Padding(
-                  padding: EdgeInsets.only(top: 48.h),
-                  child: Column(
-                    // crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Align(
-                        alignment: AlignmentDirectional.centerStart,
-                        child: Text(StringManager.email),
+                Column(
+                  children: [
+                    Align(
+                      alignment: AlignmentDirectional.centerStart,
+                      child: Text(
+                        StringManager.loginWithEmail,
+                        style: TextStyles.font24BlackBold,
                       ),
+                    ),
+                    verticalSpacing(48.h),
+                    Align(
+                      alignment: AlignmentDirectional.centerStart,
+                      child: Text(StringManager.email),
+                    ),
+                    verticalSpacing(2.h),
+                    AppTextFormField(horizontal: 16.w, vertical: 14.h),
+                    verticalSpacing(15.h),
 
-                      AppTextFormField(horizontal: 16.w, vertical: 14.h),
-                      SizedBox(height: 16),
+                    Align(
+                      alignment: AlignmentDirectional.centerStart,
+                      child: Text(StringManager.password),
+                    ),
+                    verticalSpacing(2.h),
+                    AppTextFormField(horizontal: 16.w, vertical: 14.h),
 
-                      Align(
-                        alignment: AlignmentDirectional.centerStart,
-                        child: Text(StringManager.password),
-                      ),
-                      AppTextFormField(horizontal: 16.w, vertical: 14.h),
-
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          SizedBox(
-                            width: 19.w,
-                            // height: 15.h,
-                            child: Checkbox(
-                              activeColor: ColorsManager.gruyDark,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(4),
-                              ),
-                              value: true,
-                              onChanged: (value) {},
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SizedBox(
+                          width: 19.w,
+                          child: Checkbox(
+                            activeColor: ColorsManager.gruyDark,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(4),
                             ),
+                            value: true,
+                            onChanged: (value) {},
                           ),
-                          Text("Forgot Password"),
-                        ],
-                      ),
-                      verticalSpacing(48.h),
-                      AppButton(
-                        buttinName: StringManager.login,
-                        style: TextStyles.font16WhiteBold,
-                        onTap: () {},
-                      ),
-                    ],
+                        ),
+                        Text("Forgot Password"),
+                      ],
+                    ),
+                    verticalSpacing(48.h),
+                    AppButton(
+                      buttinName: StringManager.login,
+                      style: TextStyles.font13WhiteBold,
+                      onTap: () {
+                        context.pushNamedAndRemoveUntil(
+                          Routes.signUp,
+                          predicate: (_) => false,
+                        );
+                      },
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 30.h),
+                  child: AppRichText(
+                    onTap: () => context.pushNamedAndRemoveUntil(
+                      Routes.signUp,
+                      predicate: (_) => false,
+                    ),
+                    fristText: StringManager.dontHaveAnAccount,
+                    lateText: StringManager.signUp,
                   ),
                 ),
-
-                // SizedBox(height: 24),
               ],
             ),
           ),
