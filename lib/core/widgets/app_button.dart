@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/core/util/colors_manager.dart';
 import 'package:e_commerce_app/core/util/extension.dart';
 import 'package:e_commerce_app/core/util/string_manager.dart';
 import 'package:e_commerce_app/core/util/style.dart';
@@ -34,7 +35,7 @@ class AppButton extends StatelessWidget {
         width: width ?? context.screenWidth,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: color ?? Color(0xff452CE8),
+          color: color ?? ColorsManager.purple,
         ),
         child:
             widget ??
