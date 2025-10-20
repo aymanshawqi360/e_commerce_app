@@ -36,10 +36,35 @@ class TextStyles {
     fontWeight: FontWeightHelper.bold,
     fontFamily: StringManager.satoshiMedium,
   );
-  static TextStyle font16WhiteBold = TextStyle(
+  static TextStyle font13WhiteBold = TextStyle(
     color: ColorsManager.white,
     fontSize: 13.sp,
     fontWeight: FontWeightHelper.bold,
+    fontFamily: StringManager.satoshiMedium,
+  );
+  static TextStyle font12PurpleLight = TextStyle(
+    color: ColorsManager.purple,
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.light,
+    fontFamily: StringManager.satoshiMedium,
+  );
+  static TextStyle font12BlackLight = TextStyle(
+    color: ColorsManager.black,
+    fontSize: 12.sp,
+    fontWeight: FontWeightHelper.light,
+    fontFamily: StringManager.satoshiMedium,
+  );
+
+  static TextStyle font14OnyxRegular = TextStyle(
+    color: ColorsManager.onyx,
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.regular,
+    fontFamily: StringManager.satoshiMedium,
+  );
+  static TextStyle font14GrayRegular = TextStyle(
+    color: ColorsManager.gray,
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.regular,
     fontFamily: StringManager.satoshiMedium,
   );
 }

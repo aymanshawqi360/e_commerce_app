@@ -1,23 +1,25 @@
-import 'package:e_commerce_app/core/functions/spacing.dart';
 import 'package:e_commerce_app/core/routing/routes.dart';
+import 'package:e_commerce_app/core/widgets/app_rich_text.dart';
+import 'package:flutter/gestures.dart';
+import 'package:flutter/material.dart';
+
+import 'package:e_commerce_app/core/functions/spacing.dart';
 import 'package:e_commerce_app/core/util/colors_manager.dart';
 import 'package:e_commerce_app/core/util/extension.dart';
 import 'package:e_commerce_app/core/util/string_manager.dart';
 import 'package:e_commerce_app/core/util/style.dart';
 import 'package:e_commerce_app/core/widgets/app_button.dart';
-import 'package:e_commerce_app/core/widgets/app_rich_text.dart';
 import 'package:e_commerce_app/core/widgets/app_test_form_field.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SignUpScreen extends StatefulWidget {
+  const SignUpScreen({super.key});
 
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _SignUpScreenState createState() => _SignUpScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen>
+class _SignUpScreenState extends State<SignUpScreen>
     with TickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<Offset> _slideAnimation;
@@ -54,7 +56,8 @@ class _LoginScreenState extends State<LoginScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFBFBFC),
+      resizeToAvoidBottomInset: false,
+      backgroundColor: const Color(0xFFFBFBFC),
       body: SlideTransition(
         position: _slideAnimation,
         child: FadeTransition(
@@ -73,12 +76,12 @@ class _LoginScreenState extends State<LoginScreen>
                     Align(
                       alignment: AlignmentDirectional.centerStart,
                       child: Text(
-                        StringManager.loginWithEmail,
+                        StringManager.signupwithEmail,
                         style: TextStyles.font24BlackBold,
                       ),
                     ),
                     verticalSpacing(48.h),
-                    Align(
+                    const Align(
                       alignment: AlignmentDirectional.centerStart,
                       child: Text(StringManager.email),
                     ),
@@ -86,15 +89,23 @@ class _LoginScreenState extends State<LoginScreen>
                     AppTextFormField(horizontal: 16.w, vertical: 14.h),
                     verticalSpacing(15.h),
 
-                    Align(
+                    const Align(
                       alignment: AlignmentDirectional.centerStart,
                       child: Text(StringManager.password),
                     ),
                     verticalSpacing(2.h),
                     AppTextFormField(horizontal: 16.w, vertical: 14.h),
 
+                    verticalSpacing(15.h),
+                    const Align(
+                      alignment: AlignmentDirectional.centerStart,
+                      child: Text(StringManager.confirmPassword),
+                    ),
+                    verticalSpacing(2.h),
+                    AppTextFormField(horizontal: 16.w, vertical: 14.h),
+
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         SizedBox(
                           width: 19.w,
@@ -103,35 +114,42 @@ class _LoginScreenState extends State<LoginScreen>
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(4),
                             ),
-                            value: true,
+                            value: false,
                             onChanged: (value) {},
                           ),
                         ),
-                        Text("Forgot Password"),
+                        horizontalSpacing(5.w),
+                        Text(
+                          StringManager.agreeWith,
+                          style: TextStyles.font12BlackLight,
+                        ),
+                        GestureDetector(
+                          onTap: () {},
+                          child: Text(
+                            StringManager.termsCondition,
+                            style: TextStyles.font12PurpleLight,
+                          ),
+                        ),
                       ],
                     ),
                     verticalSpacing(48.h),
                     AppButton(
-                      buttinName: StringManager.login,
+                      buttinName: StringManager.signUp,
                       style: TextStyles.font13WhiteBold,
-                      onTap: () {
-                        context.pushNamedAndRemoveUntil(
-                          Routes.signUp,
-                          predicate: (_) => false,
-                        );
-                      },
+                      onTap: () {},
                     ),
                   ],
                 ),
+
                 Padding(
                   padding: EdgeInsets.only(bottom: 30.h),
                   child: AppRichText(
                     onTap: () => context.pushNamedAndRemoveUntil(
-                      Routes.signUp,
+                      Routes.login,
                       predicate: (_) => false,
                     ),
-                    fristText: StringManager.dontHaveAnAccount,
-                    lateText: StringManager.signUp,
+                    fristText: StringManager.alreadyHaveAnAccount,
+                    lateText: StringManager.login,
                   ),
                 ),
               ],
