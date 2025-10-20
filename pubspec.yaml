@@ -119,7 +119,7 @@ flutter:
       fonts:
         - asset: assets/font/Satoshi-Medium.otf
         - asset: assets/font/Satoshi-MediumItalic.otf
-    - family: 
+    - family: SatoshiRegular
       fonts: 
         - asset: assets/font/Satoshi-Regular.otf     
          
