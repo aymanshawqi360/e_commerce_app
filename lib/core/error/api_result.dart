@@ -1,13 +1,10 @@
 import 'package:e_commerce_app/core/error/api_error_model.dart';
 
-class ApiResult<T> {
+abstract class ApiResult<T> {
   const ApiResult();
-  factory ApiResult.success(T data) {
-    return Success(data: data);
-  }
-  factory ApiResult.failure(ApiErrorModel errorResulr) {
-    return Failure(errorMessage: errorResulr);
-  }
+  factory ApiResult.success(T data) => Success(data: data);
+  factory ApiResult.failure(ApiErrorModel errorResulr) =>
+      Failure(errorMessage: errorResulr);
 }
 
 class Success<T> extends ApiResult<T> {
