@@ -15,17 +15,6 @@ class DioFactory extends ApiConsumer {
       //  headers: {'Content-Type': 'application/json'},
     );
 
-    // dio.interceptors.add(
-    //   PrettyDioLogger(
-    //     request: true,
-    //     error: true,
-    //     requestBody: true,
-    //     requestHeader: true,
-    //     responseBody: true,
-    //     responseHeader: true,
-    //   ),
-    //   ApiInterceptorsWrapper(dio: dio),
-    // );
     dio.interceptors.addAll([
       PrettyDioLogger(
         request: true,
