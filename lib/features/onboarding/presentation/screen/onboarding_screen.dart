@@ -1,4 +1,4 @@
-import 'package:e_commerce_app/core/routing/routes.dart';
+import 'package:e_commerce_app/config/routing/routes.dart';
 import 'package:e_commerce_app/core/util/assets_manager.dart';
 import 'package:e_commerce_app/core/util/extension.dart';
 import 'package:e_commerce_app/core/util/string_manager.dart';

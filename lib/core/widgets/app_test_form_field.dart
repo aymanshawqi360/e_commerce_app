@@ -76,7 +76,7 @@ class AppTextFormField extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
             ),
         hintText: hintText ?? "Email/Phone Number",
-        hintStyle: TextStyles.font13SoftGrayRegular,
+        hintStyle: TextStyles.font12SoftGrayRegular,
         // font14GrayRegular,
         filled: filled ?? true,
         fillColor: fillColor ?? Color(0xFFFBFBFC),

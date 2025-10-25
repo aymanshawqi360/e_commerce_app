@@ -1,5 +1,5 @@
-import 'package:e_commerce_app/core/error/api_error_hundler.dart';
-import 'package:e_commerce_app/core/error/api_result.dart';
+import 'package:e_commerce_app/config/error/api_error_hundler.dart';
+import 'package:e_commerce_app/config/error/api_result.dart';
 import 'package:e_commerce_app/features/auth/data/api/auth_api_service.dart';
 import 'package:e_commerce_app/features/auth/data/model/sign_up/signup_request_body.dart';
 import 'package:e_commerce_app/features/auth/data/model/sign_up/signup_response_model.dart';

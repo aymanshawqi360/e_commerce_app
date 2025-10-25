@@ -52,6 +52,6 @@ class ApiErrorHundler {
   }
 
   static ApiErrorModel responseError({required dynamic data}) {
-    return ApiErrorModel(errorMessage: data['errorMessage']);
+    return ApiErrorModel(errorMessage: data['message'], errors: data['errors']);
   }
 }

@@ -1,9 +1,13 @@
 class AssetsManager {
-  static const String __assetsImage = "assets/image/";
-  static const String __assetsSvg = "assets/svg/";
+  static const String _assetsImage = "assets/image/";
+  static const String _assetsSvg = "assets/svg/";
+  static const String _assetsLottie = "assets/lottie/";
 
   //!Image
 
   //!Svg
-  static const String onboarding = '${__assetsSvg}onboarding.svg';
+  static const String onboarding = '${_assetsSvg}onboarding.svg';
+
+  //!Lottie
+  static const String loading = '${_assetsLottie}Loading.json';
 }

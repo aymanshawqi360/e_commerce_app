@@ -6,7 +6,7 @@ import 'package:e_commerce_app/features/auth/data/model/sign_up/signup_request_b
 
 class AuthApiService {
   final DioFactory dioFactory;
-  const AuthApiService(this.dioFactory);
+  const AuthApiService({required this.dioFactory});
 
   Future<Response> signUp({required SignupRequestBody body}) async {
     try {

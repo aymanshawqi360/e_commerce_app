@@ -3,12 +3,16 @@ import 'package:flutter/material.dart';
 class CheckUsedValues {
   CheckUsedValues._();
 
-  static checkUsedValues(
-    GlobalKey<FormState> formState,
-    void Function() onValid,
-  ) {
-    if (formState.currentState?.validate() == true) {
-      onValid;
+  static void checkUsedValues(
+    GlobalKey<FormState> formState, {
+    required void Function() onValid,
+  }) {
+    if (formState.currentState!.validate()) {
+      onValid();
     }
   }
+}
+
+abstract class CheckUsedValuesState {
+  void checkUsedValuesState();
 }

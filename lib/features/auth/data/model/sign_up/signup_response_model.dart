@@ -8,7 +8,7 @@ class SignupResponseModel {
   String? roles;
   SignupResponseModel({this.id, this.email, this.roles});
   factory SignupResponseModel.fromJson(Map<String, dynamic> json) =>
-      _$SignipResponseModelFromJson(json);
+      _$SignupResponseModelFromJson(json);
 
-  Map<String, dynamic> toJson() => _$SignipResponseModelToJson(this);
+  Map<String, dynamic> toJson() => _$SignupResponseModelToJson(this);
 }
