@@ -1,5 +1,5 @@
-import 'package:e_commerce_app/core/functions/spacing.dart';
-import 'package:e_commerce_app/core/routing/routes.dart';
+import 'package:e_commerce_app/config/functions/spacing.dart';
+import 'package:e_commerce_app/config/routing/routes.dart';
 import 'package:e_commerce_app/core/util/colors_manager.dart';
 import 'package:e_commerce_app/core/util/extension.dart';
 import 'package:e_commerce_app/core/util/string_manager.dart';

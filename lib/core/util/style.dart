@@ -24,11 +24,11 @@ class TextStyles {
     fontWeight: FontWeightHelper.medium,
     fontFamily: StringManager.satoshiMedium,
   );
-  static TextStyle font13SoftGrayRegular = TextStyle(
+  static TextStyle font12SoftGrayRegular = TextStyle(
     color: ColorsManager.softGray,
-    fontSize: 13.sp,
+    fontSize: 12.sp,
     fontWeight: FontWeightHelper.regular,
-    fontFamily: StringManager.satoshiMedium,
+    fontFamily: StringManager.satoshiRegular,
   );
   static TextStyle font24BlackBold = TextStyle(
     color: ColorsManager.black,

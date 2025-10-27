@@ -1,15 +1,22 @@
-// import 'package:dio/dio.dart';
-// import 'package:e_commerce_app/core/network/base_url.dart';
-// import 'package:e_commerce_app/features/auth/login/data/api/login_api_constants.dart';
-// import 'package:e_commerce_app/features/auth/login/data/model/login_model_body.dart';
-// import 'package:e_commerce_app/features/auth/login/data/model/login_model_response.dart';
-// import 'package:retrofit/retrofit.dart';
-// part 'login_api_service.g.dart';
+import 'package:dio/dio.dart';
 
-// @RestApi(baseUrl: BaseUrl.baseUrl)
-// abstract class LoginApiService {
-//   factory LoginApiService(Dio dio, {String? baseUrl}) = _LoginApiService;
+import 'package:e_commerce_app/core/networking/dio_factory.dart';
+import 'package:e_commerce_app/features/auth/data/api/auth_api_constants.dart';
+import 'package:e_commerce_app/features/auth/data/model/sign_up/signup_request_body.dart';
 
-//   @POST(LoginApiConstants.login)
-//   Future<LoginModelResponse> login(@Body() LoginModelBody loginModelBody);
-// }
+class AuthApiService {
+  final DioFactory dioFactory;
+  const AuthApiService({required this.dioFactory});
+
+  Future<Response> signUp({required SignupRequestBody body}) async {
+    try {
+      final result = await dioFactory.post(
+        AuthApiConstants.signUp,
+        body: body.toJson(),
+      );
+      return result;
+    } catch (e) {
+      rethrow;
+    }
+  }
+}
