@@ -11,6 +11,7 @@ SignupResponseModel _$SignupResponseModelFromJson(Map<String, dynamic> json) =>
       id: (json['id'] as num?)?.toInt(),
       email: json['email'] as String?,
       roles: json['roles'] as String?,
+      termsAccepted: json['terms_accepted'] as bool?,
     );
 
 Map<String, dynamic> _$SignupResponseModelToJson(
@@ -19,4 +20,5 @@ Map<String, dynamic> _$SignupResponseModelToJson(
   'id': instance.id,
   'email': instance.email,
   'roles': instance.roles,
+  'terms_accepted': instance.termsAccepted,
 };
