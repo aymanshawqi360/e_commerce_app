@@ -1,4 +1,8 @@
+import 'dart:developer';
+
 import 'package:bloc/bloc.dart';
+import 'package:e_commerce_app/config/cache/cache_constants.dart';
+import 'package:e_commerce_app/config/cache/cache_helper.dart';
 import 'package:e_commerce_app/config/error/api_error_model.dart';
 import 'package:e_commerce_app/config/error/api_result.dart';
 import 'package:e_commerce_app/features/auth/data/model/login/login_request_body.dart';
@@ -27,6 +31,7 @@ class LoginCubit extends Cubit<LoginState> {
       ),
     );
     if (response is Success<LoginResponseModel>) {
+      await rememberState(response);
       emit(AuthLoginSuccess());
     } else if (response is Failure<LoginResponseModel>) {
       emit(
@@ -38,5 +43,27 @@ class LoginCubit extends Cubit<LoginState> {
         ),
       );
     }
+  }
+
+  bool _isRemember = false;
+  bool get isRemember => _isRemember;
+
+  Future<void> rememberState(Success<LoginResponseModel> response) async {
+    if (_isRemember == true) {
+      SecureStorage.setData(
+        cacheToken: CacheConstants.accessToken,
+        value: response.data?.access ?? '',
+      );
+      SecureStorage.setData(
+        cacheToken: CacheConstants.refreshToken,
+        value: response.data?.refresh ?? '',
+      );
+    }
+  }
+
+  void checkRememberMe({required bool value}) {
+    _isRemember = value;
+
+    emit(AuthLoginRemember(isRemembr: _isRemember));
   }
 }

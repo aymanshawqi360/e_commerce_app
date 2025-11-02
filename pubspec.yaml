@@ -44,8 +44,7 @@ dependencies:
   dio: ^5.9.0
   json_serializable: ^6.7.0
   pretty_dio_logger: ^1.4.0
-  json_annotation: ^4.9.0
-  build_runner: ^2.7.1    
+  json_annotation: ^4.9.0   
   get_it: ^8.2.0
   # State Management
   flutter_bloc: ^9.1.1
@@ -59,13 +58,17 @@ dependencies:
   lottie: ^3.3.2
   # A mock framework inspired by Mockito with APIs 
   mockito: ^5.4.4
+  
+  
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   # A testing library which makes it easy to test blocs. Built to be used with the bloc state management package  
-  bloc_test: ^10.0.0    
+  bloc_test: ^10.0.0
+  #A build system for Dart code generation and modular compilation.
+  build_runner: ^2.7.1     
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

@@ -6,7 +6,7 @@ import 'package:e_commerce_app/features/auth/domain/repo/auth_repo.dart';
 import 'package:e_commerce_app/features/auth/domain/use_case/auth_login_use_cases.dart';
 import 'package:e_commerce_app/features/auth/domain/use_case/auth_signup_use_cases.dart';
 import 'package:e_commerce_app/features/auth/presentation/cubit/login/login_cubit.dart';
-import 'package:e_commerce_app/features/auth/presentation/cubit/signup_cubit.dart';
+import 'package:e_commerce_app/features/auth/presentation/cubit/signup/signup_cubit.dart';
 import 'package:get_it/get_it.dart';
 
 final sl = GetIt.instance;
