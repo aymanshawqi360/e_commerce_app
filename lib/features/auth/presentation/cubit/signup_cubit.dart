@@ -17,7 +17,7 @@ class SignupCubit extends Cubit<SignupState> {
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
   final formKey = GlobalKey<FormState>();
-  void signUpState() async {
+  Future<void> signUpState() async {
     emit(AuthSignupLoading());
     final response = await authSignupUseCases.signUp(
       body: SignupRequestBody(
