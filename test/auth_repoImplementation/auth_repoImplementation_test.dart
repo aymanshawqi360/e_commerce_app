@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:e_commerce_app/config/error/api_result.dart';
 import 'package:e_commerce_app/features/auth/data/api/auth_api_service.dart';
+import 'package:e_commerce_app/features/auth/data/model/login/login_request_body.dart';
+import 'package:e_commerce_app/features/auth/data/model/login/login_response_model.dart';
 import 'package:e_commerce_app/features/auth/data/model/sign_up/signup_request_body.dart';
 import 'package:e_commerce_app/features/auth/data/model/sign_up/signup_response_model.dart';
 import 'package:e_commerce_app/features/auth/data/repo_implementation/auth_repo_implementation.dart';
@@ -15,11 +17,16 @@ void main() {
   late AuthRepoImplementation authRepoImplementation;
   late MockAuthApiService mockAuthApiService;
   late SignupRequestBody signupRequestBody;
+  late LoginRequestBody loginRequestBody;
   late SignupResponseModel signupResponseModel;
   setUp(() {
     mockAuthApiService = MockAuthApiService();
     authRepoImplementation = AuthRepoImplementation(
       authApiService: mockAuthApiService,
+    );
+    loginRequestBody = LoginRequestBody(
+      email: "test123@gmail.com",
+      password: "test123456789",
     );
     signupRequestBody = SignupRequestBody(
       confirmPassword: "1236",
@@ -52,9 +59,35 @@ void main() {
     expect((result is Failure), false);
   });
 
-  test("description", () async {
-    when(
-      mockAuthApiService.signUp(
+  test(
+    "signup authRepoImplementation returns failure when API returns 400",
+    () async {
+      when(
+        mockAuthApiService.signUp(
+          body: SignupRequestBody(
+            confirmPassword: "",
+            email: "",
+            password: "",
+            roles: "",
+            termsAccepted: true,
+          ),
+        ),
+      ).thenAnswer(
+        (_) async => Response(
+          statusCode: 400,
+          data: {
+            "message": "Invalid Request",
+            "errors": {
+              "email": ["This field may not be blank."],
+              "password1": ["This field may not be blank."],
+              "password2": ["This field may not be blank."],
+              "roles": ["This field may not be blank."],
+            },
+          },
+          requestOptions: RequestOptions(path: 'account/sign-up/'),
+        ),
+      );
+      final result = await authRepoImplementation.signUp(
         body: SignupRequestBody(
           confirmPassword: "",
           email: "",
@@ -62,31 +95,25 @@ void main() {
           roles: "",
           termsAccepted: true,
         ),
-      ),
-    ).thenAnswer(
-      (_) async => Response(
-        statusCode: 400,
-        data: {
-          "message": "Invalid Request",
-          "errors": {
-            "email": ["This field may not be blank."],
-            "password1": ["This field may not be blank."],
-            "password2": ["This field may not be blank."],
-            "roles": ["This field may not be blank."],
-          },
-        },
-        requestOptions: RequestOptions(path: 'account/sign-up/'),
-      ),
-    );
-    final result = await authRepoImplementation.signUp(
-      body: SignupRequestBody(
-        confirmPassword: "",
-        email: "",
-        password: "",
-        roles: "",
-        termsAccepted: true,
-      ),
-    );
-    expect((result is Failure), true);
-  });
+      );
+      expect((result is Failure), true);
+    },
+  );
+
+  test(
+    "login authRepoImplementation returns success when API returns 200",
+    () async {
+      when(mockAuthApiService.login(body: loginRequestBody)).thenAnswer(
+        (_) async => Response(
+          requestOptions: RequestOptions(path: 'account/login/token/'),
+          statusCode: 200,
+          data: signupResponseModel.toJson(),
+        ),
+      );
+      final result = await authRepoImplementation.login(body: loginRequestBody);
+
+      expect(result, isA<ApiResult<LoginResponseModel>>());
+      expect((result is Success<LoginResponseModel>), true);
+    },
+  );
 }

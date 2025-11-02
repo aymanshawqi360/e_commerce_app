@@ -1,12 +1,9 @@
-import 'package:e_commerce_app/config/functions/spacing.dart';
 import 'package:e_commerce_app/config/routing/routes.dart';
-import 'package:e_commerce_app/core/util/colors_manager.dart';
 import 'package:e_commerce_app/core/util/extension.dart';
 import 'package:e_commerce_app/core/util/string_manager.dart';
-import 'package:e_commerce_app/core/util/style.dart';
-import 'package:e_commerce_app/core/widgets/app_button.dart';
 import 'package:e_commerce_app/core/widgets/app_rich_text.dart';
-import 'package:e_commerce_app/core/widgets/app_test_form_field.dart';
+import 'package:e_commerce_app/features/auth/presentation/widget/login/login_bloc_listener.dart';
+import 'package:e_commerce_app/features/auth/presentation/widget/login/login_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -54,6 +51,7 @@ class _LoginScreenState extends State<LoginScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Color(0xFFFBFBFC),
       body: SlideTransition(
         position: _slideAnimation,
@@ -68,61 +66,9 @@ class _LoginScreenState extends State<LoginScreen>
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Column(
-                  children: [
-                    Align(
-                      alignment: AlignmentDirectional.centerStart,
-                      child: Text(
-                        StringManager.loginWithEmail,
-                        style: TextStyles.font24BlackBold,
-                      ),
-                    ),
-                    verticalSpacing(48.h),
-                    Align(
-                      alignment: AlignmentDirectional.centerStart,
-                      child: Text(StringManager.email),
-                    ),
-                    verticalSpacing(2.h),
-                    AppTextFormField(horizontal: 16.w, vertical: 14.h),
-                    verticalSpacing(15.h),
+                LoginForm(),
+                LoginBlocListener(),
 
-                    Align(
-                      alignment: AlignmentDirectional.centerStart,
-                      child: Text(StringManager.password),
-                    ),
-                    verticalSpacing(2.h),
-                    AppTextFormField(horizontal: 16.w, vertical: 14.h),
-
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        SizedBox(
-                          width: 19.w,
-                          child: Checkbox(
-                            activeColor: ColorsManager.gruyDark,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(4),
-                            ),
-                            value: true,
-                            onChanged: (value) {},
-                          ),
-                        ),
-                        Text("Forgot Password"),
-                      ],
-                    ),
-                    verticalSpacing(48.h),
-                    AppButton(
-                      buttinName: StringManager.login,
-                      style: TextStyles.font13WhiteBold,
-                      onTap: () {
-                        context.pushNamedAndRemoveUntil(
-                          Routes.signUp,
-                          predicate: (_) => false,
-                        );
-                      },
-                    ),
-                  ],
-                ),
                 Padding(
                   padding: EdgeInsets.only(bottom: 30.h),
                   child: AppRichText(

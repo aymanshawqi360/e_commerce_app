@@ -22,6 +22,8 @@ class ApiErrorModel {
         for (String messages in value) {
           message.writeln("— $messages");
         }
+      } else {
+        message.writeln("— $value");
       }
     });
     return message.toString();

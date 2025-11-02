@@ -1,20 +1,17 @@
-import 'dart:developer';
-
 import 'package:e_commerce_app/config/constants/user_roles.dart';
 import 'package:e_commerce_app/config/functions/chack_of_use_values.dart';
 import 'package:e_commerce_app/config/functions/spacing.dart';
-import 'package:e_commerce_app/core/util/assets_manager.dart';
 import 'package:e_commerce_app/core/util/colors_manager.dart';
 import 'package:e_commerce_app/core/util/string_manager.dart';
 import 'package:e_commerce_app/core/util/style.dart';
 import 'package:e_commerce_app/core/widgets/app_button.dart';
+import 'package:e_commerce_app/core/widgets/app_lottie_loading.dart';
 import 'package:e_commerce_app/core/widgets/app_test_form_field.dart';
 import 'package:e_commerce_app/features/auth/presentation/cubit/signup_cubit.dart';
 import 'package:e_commerce_app/features/auth/presentation/cubit/signup_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lottie/lottie.dart';
 
 class SignupFrom extends StatefulWidget {
   const SignupFrom({super.key});
@@ -127,7 +124,6 @@ class _SignupFromState extends State<SignupFrom> {
             dropdownColor: Color(0xFFFBFBFC),
 
             decoration: InputDecoration(
-              // hintText: "Select an item",
               hintStyle: TextStyles.font12SoftGrayRegular,
               contentPadding: EdgeInsets.symmetric(
                 horizontal: 16.w,
@@ -207,18 +203,7 @@ class _SignupFromState extends State<SignupFrom> {
                       child: AppButton(
                         widget: Center(
                           child: (state is AuthSignupLoading)
-                              ? Lottie.asset(
-                                  AssetsManager.loading,
-                                  width: 30.w,
-                                  height: 30.h,
-                                  delegates: LottieDelegates(
-                                    values: [
-                                      ValueDelegate.color(const [
-                                        '**',
-                                      ], value: ColorsManager.white),
-                                    ],
-                                  ),
-                                )
+                              ? AppLottieLoading()
                               : Text(
                                   textAlign: TextAlign.center,
                                   StringManager.signUp,

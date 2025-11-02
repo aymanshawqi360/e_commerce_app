@@ -12,7 +12,3 @@ class CheckUsedValues {
     }
   }
 }
-
-abstract class CheckUsedValuesState {
-  void checkUsedValuesState();
-}
