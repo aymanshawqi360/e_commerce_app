@@ -7,6 +7,7 @@ import 'package:e_commerce_app/core/widgets/app_button.dart';
 import 'package:e_commerce_app/core/widgets/app_lottie_loading.dart';
 import 'package:e_commerce_app/core/widgets/app_test_form_field.dart';
 import 'package:e_commerce_app/features/auth/presentation/cubit/login/login_cubit.dart';
+import 'package:e_commerce_app/features/auth/presentation/widget/login/login_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -77,17 +78,7 @@ class _LoginFormState extends State<LoginForm> {
             child: Text(StringManager.password),
           ),
           verticalSpacing(2.h),
-          AppTextFormField(
-            controller: passwordController,
-            horizontal: 16.w,
-            vertical: 14.h,
-            hintText: StringManager.enterYourPassword,
-            validator: (value) {
-              if (value?.isEmpty ?? value == null) {
-                return "password must not be empty";
-              }
-            },
-          ),
+          LoginTextFormField(passwordController: passwordController),
 
           BlocBuilder<LoginCubit, LoginState>(
             builder: (context, state) {
@@ -104,8 +95,10 @@ class _LoginFormState extends State<LoginForm> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(4),
                           ),
-                          value: true,
-                          onChanged: (value) {},
+                          value: cubit.isRemember,
+                          onChanged: (value) {
+                            cubit.checkRememberMe(value: value!);
+                          },
                         ),
                       ),
                       Text("Forgot Password"),

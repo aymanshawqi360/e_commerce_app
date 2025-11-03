@@ -7,6 +7,8 @@ class AssetsManager {
 
   //!Svg
   static const String onboarding = '${_assetsSvg}onboarding.svg';
+  static const String visibility = '${_assetsSvg}visibility.svg';
+  static const String visibilityOff = '${_assetsSvg}visibility_off.svg';
 
   //!Lottie
   static const String loading = '${_assetsLottie}Loading.json';

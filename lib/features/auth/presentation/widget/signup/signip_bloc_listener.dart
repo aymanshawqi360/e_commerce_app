@@ -1,6 +1,6 @@
 import 'package:e_commerce_app/config/error/show_error_message.dart';
-import 'package:e_commerce_app/features/auth/presentation/cubit/signup_cubit.dart';
-import 'package:e_commerce_app/features/auth/presentation/cubit/signup_state.dart';
+import 'package:e_commerce_app/features/auth/presentation/cubit/signup/signup_cubit.dart';
+import 'package:e_commerce_app/features/auth/presentation/cubit/signup/signup_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

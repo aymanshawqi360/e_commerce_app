@@ -7,8 +7,9 @@ import 'package:e_commerce_app/core/util/style.dart';
 import 'package:e_commerce_app/core/widgets/app_button.dart';
 import 'package:e_commerce_app/core/widgets/app_lottie_loading.dart';
 import 'package:e_commerce_app/core/widgets/app_test_form_field.dart';
-import 'package:e_commerce_app/features/auth/presentation/cubit/signup_cubit.dart';
-import 'package:e_commerce_app/features/auth/presentation/cubit/signup_state.dart';
+import 'package:e_commerce_app/features/auth/presentation/cubit/signup/signup_cubit.dart';
+import 'package:e_commerce_app/features/auth/presentation/cubit/signup/signup_state.dart';
+import 'package:e_commerce_app/features/auth/presentation/widget/signup/signup_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -84,17 +85,7 @@ class _SignupFromState extends State<SignupFrom> {
             child: Text(StringManager.password),
           ),
           verticalSpacing(2.h),
-          AppTextFormField(
-            controller: passwordController,
-            horizontal: 16.w,
-            vertical: 14.h,
-            hintText: StringManager.enterYourPassword,
-            validator: (value) {
-              if (value?.isEmpty ?? value == null) {
-                return "password must not be empty";
-              }
-            },
-          ),
+          SignUpTextFormField(passwordController: passwordController),
 
           verticalSpacing(15.h),
           const Align(

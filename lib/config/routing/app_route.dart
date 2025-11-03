@@ -2,7 +2,7 @@ import 'package:e_commerce_app/config/routing/routes.dart';
 import 'package:e_commerce_app/config/routing/transitions.dart';
 import 'package:e_commerce_app/di/dependency_injection.dart';
 import 'package:e_commerce_app/features/auth/presentation/cubit/login/login_cubit.dart';
-import 'package:e_commerce_app/features/auth/presentation/cubit/signup_cubit.dart';
+import 'package:e_commerce_app/features/auth/presentation/cubit/signup/signup_cubit.dart';
 import 'package:e_commerce_app/features/auth/presentation/screen/login_screen.dart';
 import 'package:e_commerce_app/features/auth/presentation/screen/sign_up_screen.dart';
 import 'package:e_commerce_app/features/onboarding/presentation/screen/onboarding_screen.dart';

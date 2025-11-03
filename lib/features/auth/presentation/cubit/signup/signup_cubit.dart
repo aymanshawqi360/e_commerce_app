@@ -6,7 +6,7 @@ import 'package:e_commerce_app/config/error/api_result.dart';
 import 'package:e_commerce_app/features/auth/data/model/sign_up/signup_request_body.dart';
 import 'package:e_commerce_app/features/auth/data/model/sign_up/signup_response_model.dart';
 import 'package:e_commerce_app/features/auth/domain/use_case/auth_signup_use_cases.dart';
-import 'package:e_commerce_app/features/auth/presentation/cubit/signup_state.dart';
+import 'package:e_commerce_app/features/auth/presentation/cubit/signup/signup_state.dart';
 import 'package:flutter/widgets.dart';
 
 class SignupCubit extends Cubit<SignupState> {

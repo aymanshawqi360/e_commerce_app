@@ -20,3 +20,11 @@ class AuthLoginFailure extends LoginState {
   @override
   List<Object> get props => [errorMessage];
 }
+
+class AuthLoginRemember extends LoginState {
+  final bool isRemembr;
+
+  const AuthLoginRemember({required this.isRemembr});
+  @override
+  List<Object> get props => [isRemembr];
+}
