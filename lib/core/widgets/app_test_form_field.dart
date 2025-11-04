@@ -2,6 +2,7 @@ import 'package:e_commerce_app/core/util/colors_manager.dart';
 import 'package:e_commerce_app/core/util/extension.dart';
 import 'package:e_commerce_app/core/util/style.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppTextFormField extends StatelessWidget {
   final String? hintText;
@@ -19,6 +20,7 @@ class AppTextFormField extends StatelessWidget {
   final bool? obscureText;
   final Widget? prefixIcon;
   final int? maxLength;
+  final TextStyle? hintStyle;
   final TextInputType? keyboardType;
   final String? errorText;
   final OutlineInputBorder? error;
@@ -42,6 +44,7 @@ class AppTextFormField extends StatelessWidget {
     this.errorText,
     this.error,
     this.obscureText,
+    this.hintStyle,
   });
 
   @override
@@ -52,9 +55,12 @@ class AppTextFormField extends StatelessWidget {
       controller: controller,
       decoration: InputDecoration(
         contentPadding: EdgeInsets.symmetric(
-          horizontal: horizontal ?? context.screenWidth / 20,
-          vertical: vertical ?? context.screenHeight / 60,
+          horizontal: horizontal ?? 16.w,
+          //  context.screenWidth / 20,
+          vertical: vertical ?? 14.h,
+          //  context.screenHeight / 60,
         ),
+
         enabledBorder: OutlineInputBorder(
           borderRadius: borderRadius ?? BorderRadius.circular(8),
           borderSide: borderSide ?? BorderSide(color: ColorsManager.softGray),
@@ -76,7 +82,7 @@ class AppTextFormField extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
             ),
         hintText: hintText ?? "Email/Phone Number",
-        hintStyle: TextStyles.font12SoftGrayRegular,
+        hintStyle: hintStyle ?? TextStyles.font12SoftGrayRegular,
         // font14GrayRegular,
         filled: filled ?? true,
         fillColor: fillColor ?? Color(0xFFFBFBFC),

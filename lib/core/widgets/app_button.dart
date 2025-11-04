@@ -8,6 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class AppButton extends StatelessWidget {
   final EdgeInsetsGeometry? padding;
   final double? width;
+  final double? height;
   final Color? color;
   final Widget? widget;
   final String? buttinName;
@@ -24,6 +25,7 @@ class AppButton extends StatelessWidget {
     this.widget,
     this.buttinName,
     required this.onTap,
+    this.height,
   });
 
   @override
@@ -31,9 +33,10 @@ class AppButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: 50.h,
+        height: height ?? 50.h,
 
-        //  padding: padding ?? EdgeInsets.symmetric(vertical: 14.h),
+        padding:
+            padding ?? EdgeInsets.symmetric(vertical: 14.h, horizontal: 16.w),
         width: width ?? context.screenWidth,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
@@ -45,11 +48,7 @@ class AppButton extends StatelessWidget {
               child: Text(
                 textAlign: TextAlign.center,
                 buttinName ?? StringManager.login,
-                style:
-                    style ??
-                    TextStyles.font15WhiteMedium.copyWith(
-                      fontWeight: FontWeight.w500,
-                    ),
+                style: style ?? TextStyles.font14WhiteBold,
               ),
             ),
       ),
