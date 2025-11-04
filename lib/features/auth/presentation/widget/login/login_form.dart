@@ -1,6 +1,8 @@
 import 'package:e_commerce_app/config/functions/chack_of_use_values.dart';
 import 'package:e_commerce_app/config/functions/spacing.dart';
+import 'package:e_commerce_app/config/routing/routes.dart';
 import 'package:e_commerce_app/core/util/colors_manager.dart';
+import 'package:e_commerce_app/core/util/extension.dart';
 import 'package:e_commerce_app/core/util/string_manager.dart';
 import 'package:e_commerce_app/core/util/style.dart';
 import 'package:e_commerce_app/core/widgets/app_button.dart';
@@ -62,8 +64,7 @@ class _LoginFormState extends State<LoginForm> {
           verticalSpacing(2.h),
           AppTextFormField(
             controller: emailController,
-            horizontal: 16.w,
-            vertical: 14.h,
+
             hintText: StringManager.enterYourEmail,
             validator: (value) {
               if (value?.isEmpty ?? value == null) {
@@ -101,7 +102,11 @@ class _LoginFormState extends State<LoginForm> {
                           },
                         ),
                       ),
-                      Text("Forgot Password"),
+                      GestureDetector(
+                        onTap: () =>
+                            context.pushNamed(Routes.forgotPasswordScreen),
+                        child: Text(StringManager.forgotPassword),
+                      ),
                     ],
                   ),
                   verticalSpacing(45.h),

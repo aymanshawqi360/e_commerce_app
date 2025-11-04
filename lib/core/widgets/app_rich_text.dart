@@ -21,7 +21,7 @@ class AppRichText extends StatelessWidget {
           children: [
             TextSpan(
               recognizer: TapGestureRecognizer()..onTap = onTap,
-              style: TextStyles.font14OnyxRegular,
+              style: TextStyles.font14OnyxBold,
               text: lateText,
             ),
           ],

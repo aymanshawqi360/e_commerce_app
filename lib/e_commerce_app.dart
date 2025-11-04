@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/config/routing/app_route.dart';
 import 'package:e_commerce_app/config/routing/routes.dart';
+import 'package:e_commerce_app/core/util/colors_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -17,6 +18,7 @@ class ECommerceApp extends StatelessWidget {
       builder: (_, child) {
         return MaterialApp(
           title: "Development",
+          theme: ThemeData(scaffoldBackgroundColor: ColorsManager.white),
           debugShowCheckedModeBanner: false,
 
           initialRoute: Routes.onboarding,

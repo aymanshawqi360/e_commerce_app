@@ -1,20 +1,17 @@
-import 'package:e_commerce_app/config/routing/routes.dart';
-import 'package:e_commerce_app/core/util/extension.dart';
-import 'package:e_commerce_app/core/util/string_manager.dart';
-import 'package:e_commerce_app/core/widgets/app_rich_text.dart';
-import 'package:e_commerce_app/features/auth/presentation/widget/login/login_bloc_listener.dart';
-import 'package:e_commerce_app/features/auth/presentation/widget/login/login_form.dart';
+import 'package:e_commerce_app/config/functions/spacing.dart';
+import 'package:e_commerce_app/core/widgets/app_forgot_password_and_description.dart';
+import 'package:e_commerce_app/features/auth/presentation/widget/forgot_password/forgot_password_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class ForgotPasswordScreen extends StatefulWidget {
+  const ForgotPasswordScreen({super.key});
 
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen>
+class _LoginScreenState extends State<ForgotPasswordScreen>
     with TickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<Offset> _slideAnimation;
@@ -52,30 +49,21 @@ class _LoginScreenState extends State<LoginScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Color(0xFFFBFBFC),
+
       body: SlideTransition(
         position: _slideAnimation,
         child: FadeTransition(
           opacity: _fadeAnimation,
           child: Padding(
-            padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 68.h),
+            padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 24.h),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                LoginForm(),
-                LoginBlocListener(),
+                verticalSpacing(35.h),
+                AppForgotPasswordAndDescription(),
+                verticalSpacing(48.h),
 
-                Padding(
-                  padding: EdgeInsets.only(bottom: 30.h),
-                  child: AppRichText(
-                    onTap: () => context.pushNamedAndRemoveUntil(
-                      Routes.signUp,
-                      predicate: (_) => false,
-                    ),
-                    fristText: StringManager.dontHaveAnAccount,
-                    lateText: StringManager.signUp,
-                  ),
-                ),
+                ForgotPasswordForm(),
               ],
             ),
           ),

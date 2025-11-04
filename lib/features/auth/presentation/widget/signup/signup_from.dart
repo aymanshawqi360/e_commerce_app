@@ -69,8 +69,6 @@ class _SignupFromState extends State<SignupFrom> {
           verticalSpacing(2.h),
           AppTextFormField(
             controller: emailController,
-            horizontal: 16.w,
-            vertical: 14.h,
             hintText: StringManager.enterYourEmail,
             validator: (value) {
               if (value?.isEmpty ?? value == null) {
@@ -95,8 +93,6 @@ class _SignupFromState extends State<SignupFrom> {
           verticalSpacing(2.h),
           AppTextFormField(
             controller: confirmPasswordController,
-            horizontal: 16.w,
-            vertical: 14.h,
             hintText: StringManager.enterYourConfirmPassword,
             validator: (value) {
               if (value?.isEmpty ?? value == null) {

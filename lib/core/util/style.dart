@@ -18,11 +18,11 @@ class TextStyles {
     fontFamily: StringManager.satoshiMedium,
   );
 
-  static TextStyle font15WhiteMedium = TextStyle(
+  static TextStyle font14WhiteBold = TextStyle(
     color: ColorsManager.white,
-    fontSize: 15.sp,
-    fontWeight: FontWeightHelper.medium,
-    fontFamily: StringManager.satoshiMedium,
+    fontSize: 14.sp,
+    fontWeight: FontWeightHelper.bold,
+    fontFamily: StringManager.satoshiBold,
   );
   static TextStyle font12SoftGrayRegular = TextStyle(
     color: ColorsManager.softGray,
@@ -40,7 +40,7 @@ class TextStyles {
     color: ColorsManager.white,
     fontSize: 13.sp,
     fontWeight: FontWeightHelper.bold,
-    fontFamily: StringManager.satoshiMedium,
+    fontFamily: StringManager.satoshiBold,
   );
   static TextStyle font12PurpleLight = TextStyle(
     color: ColorsManager.purple,
@@ -55,16 +55,36 @@ class TextStyles {
     fontFamily: StringManager.satoshiMedium,
   );
 
-  static TextStyle font14OnyxRegular = TextStyle(
+  static TextStyle font14OnyxBold = TextStyle(
+    decoration: TextDecoration.underline,
     color: ColorsManager.onyx,
     fontSize: 14.sp,
-    fontWeight: FontWeightHelper.regular,
-    fontFamily: StringManager.satoshiMedium,
+    fontWeight: FontWeightHelper.bold,
+    fontFamily: StringManager.satoshiBold,
   );
   static TextStyle font14GrayRegular = TextStyle(
     color: ColorsManager.gray,
     fontSize: 14.sp,
     fontWeight: FontWeightHelper.regular,
+    fontFamily: StringManager.satoshiMedium,
+  );
+  static TextStyle font14BlackRegular = TextStyle(
+    fontSize: 14.sp,
+    color: ColorsManager.black,
+    height: 1.4,
+    fontWeight: FontWeightHelper.regular,
+    fontFamily: StringManager.satoshiRegular,
+  );
+  static TextStyle font25BlackBold = TextStyle(
+    fontSize: 25.sp,
+    color: ColorsManager.black,
+    fontWeight: FontWeightHelper.bold,
+    fontFamily: StringManager.satoshiBold,
+  );
+  static TextStyle font12BlackMedium = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: FontWeightHelper.medium,
+    color: ColorsManager.black,
     fontFamily: StringManager.satoshiMedium,
   );
 }

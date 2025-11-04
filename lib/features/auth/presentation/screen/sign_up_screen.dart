@@ -57,13 +57,7 @@ class _SignUpScreenState extends State<SignUpScreen>
       body: SlideTransition(
         position: _slideAnimation,
         child: Padding(
-          padding: EdgeInsets.only(
-            left: 18.w,
-            //  context.screenWidth / 20,
-            right: 18.w,
-            //  context.screenWidth / 20,
-            top: context.screenHeight / 10,
-          ),
+          padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 68.h),
           child: FadeTransition(
             opacity: _fadeAnimation,
             child: Column(

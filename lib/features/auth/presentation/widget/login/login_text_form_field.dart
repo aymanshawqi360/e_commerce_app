@@ -41,8 +41,7 @@ class _LoginTextFormFieldState extends State<LoginTextFormField> {
         ),
       ),
       controller: widget.passwordController,
-      horizontal: 16.w,
-      vertical: 14.h,
+
       hintText: StringManager.enterYourPassword,
       validator: (value) {
         if (value?.isEmpty ?? value == null) {
