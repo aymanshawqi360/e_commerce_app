@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/config/functions/spacing.dart';
 import 'package:e_commerce_app/core/widgets/app_forgot_password_and_description.dart';
+import 'package:e_commerce_app/features/auth/presentation/widget/forgot_password/forgot_password_bloc_listener.dart';
 import 'package:e_commerce_app/features/auth/presentation/widget/forgot_password/forgot_password_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -64,6 +65,7 @@ class _LoginScreenState extends State<ForgotPasswordScreen>
                 verticalSpacing(48.h),
 
                 ForgotPasswordForm(),
+                ForgotPasswordBlocListener(),
               ],
             ),
           ),
