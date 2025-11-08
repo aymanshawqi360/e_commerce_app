@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:e_commerce_app/config/error/api_result.dart';
 import 'package:e_commerce_app/features/auth/data/api/auth_api_service.dart';
+import 'package:e_commerce_app/features/auth/data/model/forgot_password/forgot_password_request_body.dart';
+import 'package:e_commerce_app/features/auth/data/model/forgot_password/forgot_password_response_model.dart';
 import 'package:e_commerce_app/features/auth/data/model/login/login_request_body.dart';
 import 'package:e_commerce_app/features/auth/data/model/login/login_response_model.dart';
 import 'package:e_commerce_app/features/auth/data/model/sign_up/signup_request_body.dart';
@@ -19,6 +21,8 @@ void main() {
   late SignupRequestBody signupRequestBody;
   late LoginRequestBody loginRequestBody;
   late SignupResponseModel signupResponseModel;
+  late ForgotPasswordRequestBody forgotPasswordRequestBody;
+
   setUp(() {
     mockAuthApiService = MockAuthApiService();
     authRepoImplementation = AuthRepoImplementation(
@@ -40,6 +44,10 @@ void main() {
       id: 5,
       roles: "customer",
       termsAccepted: true,
+    );
+
+    forgotPasswordRequestBody = ForgotPasswordRequestBody(
+      email: 'sz6fy@2200freefonts.com',
     );
   });
 
@@ -116,4 +124,47 @@ void main() {
       expect((result is Success<LoginResponseModel>), true);
     },
   );
+
+  group("AuthRepoImplementation - Forgot Password", () {
+    test(
+      "forgot password authRepoImplementation returns success when API returns 200",
+      () async {
+        when(
+          mockAuthApiService.resetOtp(body: forgotPasswordRequestBody),
+        ).thenAnswer(
+          (_) async => Response(
+            requestOptions: RequestOptions(path: '/account/resend-otp/'),
+            statusCode: 200,
+            data: forgotPasswordRequestBody.toJson(),
+          ),
+        );
+        final result = await authRepoImplementation.resetOtp(
+          body: forgotPasswordRequestBody,
+        );
+        expect(result, isA<ApiResult<ForgotPasswordResponseModel>>());
+
+        expect((result is Success<ForgotPasswordResponseModel>), true);
+      },
+    );
+    test(
+      'forgot password authRepoImplementation returns success when API returns 404',
+      () async {
+        when(
+          mockAuthApiService.resetOtp(
+            body: ForgotPasswordRequestBody(email: 'sz6fy@2200freefonts.'),
+          ),
+        ).thenAnswer(
+          (_) async => Response(
+            statusCode: 404,
+            data: {"error": "Account does not exist."},
+            requestOptions: RequestOptions(path: '/account/resend-otp/'),
+          ),
+        );
+        final result = await authRepoImplementation.resetOtp(
+          body: forgotPasswordRequestBody,
+        );
+        expect((result is Failure<ForgotPasswordResponseModel>), true);
+      },
+    );
+  });
 }

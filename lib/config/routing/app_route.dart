@@ -1,6 +1,7 @@
 import 'package:e_commerce_app/config/routing/routes.dart';
 import 'package:e_commerce_app/config/routing/transitions.dart';
 import 'package:e_commerce_app/di/dependency_injection.dart';
+import 'package:e_commerce_app/features/auth/presentation/cubit/forgot_password/forgot_password_cubit.dart';
 import 'package:e_commerce_app/features/auth/presentation/cubit/login/login_cubit.dart';
 import 'package:e_commerce_app/features/auth/presentation/cubit/signup/signup_cubit.dart';
 import 'package:e_commerce_app/features/auth/presentation/screen/forgot_password_screen.dart';
@@ -36,7 +37,12 @@ class AppRoute {
           ),
         );
       case Routes.forgotPasswordScreen:
-        return Transitions.buid(widget: ForgotPasswordScreen());
+        return Transitions.buid(
+          widget: BlocProvider(
+            create: (context) => sl<AuthForgotPasswordCubit>(),
+            child: ForgotPasswordScreen(),
+          ),
+        );
       case Routes.otpScreen:
         return Transitions.buid(widget: OtpVerificationScreen());
       case Routes.passwordUpdateDefault:

@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:e_commerce_app/core/networking/dio_factory.dart';
 import 'package:e_commerce_app/features/auth/data/api/auth_api_service.dart';
+import 'package:e_commerce_app/features/auth/data/model/forgot_password/forgot_password_request_body.dart';
 import 'package:e_commerce_app/features/auth/data/model/login/login_request_body.dart';
 import 'package:e_commerce_app/features/auth/data/model/sign_up/signup_request_body.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -16,6 +17,7 @@ void main() {
   late MockDio mockDio;
   late MockInterceptors mockInterceptors;
   late LoginRequestBody loginRequestBody;
+  late ForgotPasswordRequestBody forgotPasswordRequestBody;
   setUp(() {
     mockDio = MockDio();
     mockInterceptors = MockInterceptors();
@@ -25,6 +27,9 @@ void main() {
     loginRequestBody = LoginRequestBody(
       email: "testLogin@gmail.com",
       password: "test123456789",
+    );
+    forgotPasswordRequestBody = ForgotPasswordRequestBody(
+      email: 'sz6fy@2200freefonts.com',
     );
   });
   test("signUp returns user data when API responds with 200", () async {
@@ -157,4 +162,31 @@ void main() {
       "detail": "No active account found with the given credentials",
     });
   });
+
+  test(
+    "forgot password returns user data when API responds with 200",
+    () async {
+      when(
+        mockDio.post(
+          '/account/resend-otp/',
+          data: {'email': 'sz6fy@2200freefonts.com'},
+        ),
+      ).thenAnswer(
+        (_) async => Response(
+          statusCode: 200,
+          data: {"message": "OTP resent successfully."},
+          requestOptions: RequestOptions(
+            path: '/account/resend-otp/',
+            baseUrl: 'https://e-commerce-api-production-8abf.up.railway.app/',
+          ),
+        ),
+      );
+
+      final result = await authApiService.resetOtp(
+        body: forgotPasswordRequestBody,
+      );
+
+      expect(result.data['message'], 'OTP resent successfully.');
+    },
+  );
 }
