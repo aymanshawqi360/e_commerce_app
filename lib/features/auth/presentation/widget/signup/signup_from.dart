@@ -58,7 +58,7 @@ class _SignupFromState extends State<SignupFrom> {
             alignment: AlignmentDirectional.centerStart,
             child: Text(
               StringManager.signupwithEmail,
-              style: TextStyles.font24BlackBold,
+              style: AppTextStyles.font24BlackBold,
             ),
           ),
           verticalSpacing(48.h),
@@ -111,7 +111,7 @@ class _SignupFromState extends State<SignupFrom> {
             dropdownColor: Color(0xFFFBFBFC),
 
             decoration: InputDecoration(
-              hintStyle: TextStyles.font12SoftGrayRegular,
+              hintStyle: AppTextStyles.font12SoftGrayRegular,
               contentPadding: EdgeInsets.symmetric(
                 horizontal: 16.w,
                 vertical: 14.h,
@@ -133,7 +133,7 @@ class _SignupFromState extends State<SignupFrom> {
                 value: e,
                 child: Text(
                   e,
-                  style: TextStyles.font12BlackLight,
+                  style: AppTextStyles.font12BlackLight,
                   overflow: TextOverflow.ellipsis,
                 ),
               );
@@ -171,13 +171,13 @@ class _SignupFromState extends State<SignupFrom> {
                       horizontalSpacing(5.w),
                       Text(
                         StringManager.agreeWith,
-                        style: TextStyles.font12BlackLight,
+                        style: AppTextStyles.font12BlackLight,
                       ),
                       GestureDetector(
                         onTap: () {},
                         child: Text(
                           StringManager.termsCondition,
-                          style: TextStyles.font12PurpleLight,
+                          style: AppTextStyles.font12PurpleLight,
                         ),
                       ),
                     ],
@@ -194,7 +194,7 @@ class _SignupFromState extends State<SignupFrom> {
                               : Text(
                                   textAlign: TextAlign.center,
                                   StringManager.signUp,
-                                  style: TextStyles.font13WhiteBold,
+                                  style: AppTextStyles.font13WhiteBold,
                                 ),
                         ),
 

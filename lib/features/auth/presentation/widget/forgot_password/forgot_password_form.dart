@@ -47,7 +47,7 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
             alignment: AlignmentDirectional.centerStart,
             child: Text(
               StringManager.email,
-              style: TextStyles.font12BlackMedium,
+              style: AppTextStyles.font12BlackMedium,
             ),
           ),
           verticalSpacing(4.h),
@@ -77,7 +77,7 @@ class _ForgotPasswordFormState extends State<ForgotPasswordForm> {
                         : Text(
                             textAlign: TextAlign.center,
                             StringManager.continueForgotPassword,
-                            style: TextStyles.font14WhiteBold,
+                            style: AppTextStyles.font14WhiteBold,
                           );
                   },
                 ),

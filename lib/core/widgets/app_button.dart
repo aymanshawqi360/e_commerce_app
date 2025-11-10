@@ -48,7 +48,7 @@ class AppButton extends StatelessWidget {
               child: Text(
                 textAlign: TextAlign.center,
                 buttinName ?? StringManager.login,
-                style: style ?? TextStyles.font14WhiteBold,
+                style: style ?? AppTextStyles.font14WhiteBold,
               ),
             ),
       ),

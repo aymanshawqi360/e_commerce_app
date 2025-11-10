@@ -33,12 +33,12 @@ class OnboardingScreen extends StatelessWidget {
                   Text(
                     StringManager.title,
                     textAlign: TextAlign.center,
-                    style: TextStyles.font29BLackMedium,
+                    style: AppTextStyles.font29BLackMedium,
                   ),
                   Text(
                     StringManager.description,
                     textAlign: TextAlign.center,
-                    style: TextStyles.font15GruyDarkMedium.copyWith(
+                    style: AppTextStyles.font15GruyDarkMedium.copyWith(
                       fontWeight: FontWeight.w400,
                     ),
                   ),

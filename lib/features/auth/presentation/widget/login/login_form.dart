@@ -53,7 +53,7 @@ class _LoginFormState extends State<LoginForm> {
             alignment: AlignmentDirectional.centerStart,
             child: Text(
               StringManager.loginWithEmail,
-              style: TextStyles.font24BlackBold,
+              style: AppTextStyles.font24BlackBold,
             ),
           ),
           verticalSpacing(48.h),
@@ -116,7 +116,7 @@ class _LoginFormState extends State<LoginForm> {
                           ? AppLottieLoading()
                           : Text(
                               StringManager.login,
-                              style: TextStyles.font13WhiteBold,
+                              style: AppTextStyles.font13WhiteBold,
                             ),
                     ),
 

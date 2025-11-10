@@ -13,6 +13,8 @@ import 'package:e_commerce_app/features/onboarding/presentation/screen/onboardin
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../features/home/presentation/screen/home_screen.dart';
+
 class AppRoute {
   Route? gernrateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
@@ -20,6 +22,10 @@ class AppRoute {
         return Transitions.buid(
           widget: OnboardingScreen(),
           requestFocus: false,
+        );
+      case Routes.home:
+        return Transitions.buid(
+          widget: HomeScreen(),
         );
       case Routes.login:
         return Transitions.buid(

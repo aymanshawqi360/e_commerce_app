@@ -90,10 +90,10 @@ class _LoginScreenState extends State<OtpVerificationScreen>
                     children: [
                       Text(
                         StringManager.continueForgotPassword,
-                        style: TextStyles.font13WhiteBold,
+                        style: AppTextStyles.font13WhiteBold,
                       ),
                       horizontalSpacing(7.w),
-                      Text('59', style: TextStyles.font13WhiteBold),
+                      Text('59', style: AppTextStyles.font13WhiteBold),
                     ],
                   ),
                 ),

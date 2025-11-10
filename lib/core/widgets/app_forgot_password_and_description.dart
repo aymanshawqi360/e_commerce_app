@@ -20,12 +20,12 @@ class AppForgotPasswordAndDescription extends StatelessWidget {
       children: [
         Text(
           title ?? StringManager.forgotPassword,
-          style: TextStyles.font25BlackBold,
+          style: AppTextStyles.font25BlackBold,
         ),
         verticalSpacing(8.h),
         Text(
           description ?? StringManager.descriptionForgotPassword,
-          style: TextStyles.font14BlackRegular.copyWith(fontSize: 13.7.sp),
+          style: AppTextStyles.font14BlackRegular.copyWith(fontSize: 13.7.sp),
         ),
       ],
     );

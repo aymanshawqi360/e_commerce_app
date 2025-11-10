@@ -4,7 +4,7 @@ import 'package:e_commerce_app/core/util/string_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class TextStyles {
+class AppTextStyles {
   static TextStyle font29BLackMedium = TextStyle(
     color: ColorsManager.black,
     fontSize: 29.sp,

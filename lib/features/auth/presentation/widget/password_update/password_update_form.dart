@@ -18,7 +18,7 @@ class PasswordUpdateForm extends StatelessWidget {
             alignment: AlignmentDirectional.centerStart,
             child: Text(
               StringManager.newPassword,
-              style: TextStyles.font12BlackMedium,
+              style: AppTextStyles.font12BlackMedium,
             ),
           ),
           verticalSpacing(4.h),
@@ -35,7 +35,7 @@ class PasswordUpdateForm extends StatelessWidget {
             alignment: AlignmentDirectional.centerStart,
             child: Text(
               StringManager.confirmPassword,
-              style: TextStyles.font12BlackMedium,
+              style: AppTextStyles.font12BlackMedium,
             ),
           ),
           verticalSpacing(4.h),

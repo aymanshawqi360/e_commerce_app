@@ -62,7 +62,7 @@ class _PasswordUpdateDefaultState extends State<PasswordUpdateDefault>
                 children: [
                   Text(
                     "Create New Password",
-                    style: TextStyles.font25BlackBold,
+                    style: AppTextStyles.font25BlackBold,
                   ),
 
                   verticalSpacing(48.h),
