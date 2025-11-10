@@ -87,4 +87,11 @@ class AppTextStyles {
     color: ColorsManager.black,
     fontFamily: StringManager.satoshiMedium,
   );
+
+  static TextStyle font18BlackBold = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeightHelper.bold,
+    color: Colors.black,
+    fontFamily: StringManager.satoshiMedium,
+  );
 }

@@ -13,6 +13,11 @@ class AssetsManager {
   static const String searchIcon = '${_assetsSvg}search_icon.svg';
   static const String searchVisual = '${_assetsSvg}search_visual.svg';
   static const String cancelCircle = '${_assetsSvg}cancel_circle.svg';
+  static const String fashion = '${_assetsSvg}fashion.svg';
+  static const String fitness = '${_assetsSvg}fitness.svg';
+  static const String games = '${_assetsSvg}games.svg';
+  static const String living = '${_assetsSvg}living.svg';
+  static const String stationery = '${_assetsSvg}stationery.svg';
 
 
 
