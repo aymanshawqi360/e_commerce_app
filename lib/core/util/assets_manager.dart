@@ -1,10 +1,10 @@
 class AssetsManager {
-  static const String _assetsImage = "assets/image/";
+  static const String _assetsImage = "assets/images/";
   static const String _assetsSvg = "assets/svg/";
   static const String _assetsLottie = "assets/lottie/";
 
   //!Image
-
+  static const String card = '${_assetsImage}card.png';
   //!Svg
   static const String onboarding = '${_assetsSvg}onboarding.svg';
   static const String visibility = '${_assetsSvg}visibility.svg';
@@ -18,6 +18,7 @@ class AssetsManager {
   static const String games = '${_assetsSvg}games.svg';
   static const String living = '${_assetsSvg}living.svg';
   static const String stationery = '${_assetsSvg}stationery.svg';
+
 
 
 

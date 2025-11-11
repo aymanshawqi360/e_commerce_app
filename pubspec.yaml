@@ -59,7 +59,7 @@ dependencies:
   lottie: ^3.3.2
   # A mock framework inspired by Mockito with APIs 
   mockito: ^5.4.4
-  
+  carousel_slider: ^5.1.1
 
   
   

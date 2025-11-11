@@ -36,7 +36,7 @@ class CategoriesSection extends StatelessWidget {
         ),
         const SizedBox(height: 16),
         SizedBox(
-          height: 200,
+          height: 100,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
             itemCount: categories.length,
