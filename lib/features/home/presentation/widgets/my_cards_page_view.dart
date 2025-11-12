@@ -42,7 +42,7 @@ class _MyCardsPageViewState extends State<MyCardsPageView> {
             );
           }).toList(),
           options: CarouselOptions(
-            autoPlay: true,
+            autoPlay: false,
             enlargeCenterPage: true,
             viewportFraction: 1,
             onPageChanged: (index, reason) {

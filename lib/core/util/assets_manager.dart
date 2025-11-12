@@ -5,6 +5,8 @@ class AssetsManager {
 
   //!Image
   static const String card = '${_assetsImage}card.png';
+  static const String product = '${_assetsImage}product.png';
+
   //!Svg
   static const String onboarding = '${_assetsSvg}onboarding.svg';
   static const String visibility = '${_assetsSvg}visibility.svg';
@@ -18,6 +20,7 @@ class AssetsManager {
   static const String games = '${_assetsSvg}games.svg';
   static const String living = '${_assetsSvg}living.svg';
   static const String stationery = '${_assetsSvg}stationery.svg';
+  static const String star = '${_assetsSvg}star.svg';
 
 
 

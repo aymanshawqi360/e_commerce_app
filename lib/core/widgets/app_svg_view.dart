@@ -19,8 +19,8 @@ class AppSvgView extends StatelessWidget {
     return SvgPicture.asset(
       assetName,
       fit: fit ?? BoxFit.contain,
-      height: height ?? 0,
-      width: width ?? 0,
+      height: height ?? 20,
+      width: width ?? 20,
     );
   }
 }

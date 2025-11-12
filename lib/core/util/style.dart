@@ -12,9 +12,15 @@ class AppTextStyles {
     fontFamily: "SatoshiBold",
   );
   static TextStyle font15GruyDarkMedium = TextStyle(
-    color: ColorsManager.gruyDark,
+    color: ColorsManager.greyDark,
     fontSize: 15.sp,
     fontWeight: FontWeightHelper.medium,
+    fontFamily: StringManager.satoshiMedium,
+  );
+  static TextStyle font16BlackBold = TextStyle(
+    color: ColorsManager.black,
+    fontSize: 16.sp,
+    fontWeight: FontWeightHelper.bold,
     fontFamily: StringManager.satoshiMedium,
   );
 
