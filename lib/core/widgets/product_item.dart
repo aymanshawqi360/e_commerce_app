@@ -22,38 +22,55 @@ class ProductItem extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image.asset(AssetsManager.product, width: double.infinity, fit: BoxFit.cover),
-              Text(
-                'Portable Neck Fan Hands Free Fan',
-                style: AppTextStyles.font12BlackMedium.copyWith(fontSize: 16),
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
+              Image.asset(
+                AssetsManager.product,
+                width: double.infinity,
+                fit: BoxFit.cover,
               ),
-              Text.rich(
-                TextSpan(
+              Padding(
+                padding: EdgeInsets.only(left: 8),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    TextSpan(
-                      text: '\$40  ',
-                      style: AppTextStyles.font18BlackBold.copyWith(
+                    Text(
+                      'Portable Neck Fan Hands Free Fan',
+                      style: AppTextStyles.font12BlackMedium.copyWith(
                         fontSize: 16,
                       ),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
                     ),
-                    TextSpan(
-                      text: '\$60',
-                      style: AppTextStyles.font14GrayRegular.copyWith(
-                        decoration: TextDecoration.lineThrough,
+                    Text.rich(
+                      TextSpan(
+                        children: [
+                          TextSpan(
+                            text: '\$40  ',
+                            style: AppTextStyles.font18BlackBold.copyWith(
+                              fontSize: 16,
+                            ),
+                          ),
+                          TextSpan(
+                            text: '\$60',
+                            style: AppTextStyles.font14GrayRegular.copyWith(
+                              decoration: TextDecoration.lineThrough,
+                            ),
+                          ),
+                        ],
                       ),
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        AppSvgView(assetName: AssetsManager.star),
+                        SizedBox(width: 8),
+                        Text(
+                          '4.8 (120)',
+                          style: AppTextStyles.font15GruyDarkMedium,
+                        ),
+                      ],
                     ),
                   ],
                 ),
-              ),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  AppSvgView(assetName: AssetsManager.star),
-                  SizedBox(width: 8),
-                  Text('4.8 (120)', style: AppTextStyles.font15GruyDarkMedium,)
-                ],
               ),
             ],
           ),
@@ -68,7 +85,7 @@ class ProductItem extends StatelessWidget {
                 color: ColorsManager.white,
                 borderRadius: BorderRadius.circular(4),
               ),
-              child: Icon(Icons.favorite_border,size: 16,),
+              child: Icon(Icons.favorite_border, size: 16),
             ),
           ),
         ],

@@ -9,6 +9,7 @@ import 'package:e_commerce_app/features/auth/presentation/screen/login_screen.da
 import 'package:e_commerce_app/features/auth/presentation/screen/otp_verification_screen.dart';
 import 'package:e_commerce_app/features/auth/presentation/screen/password_update_default.dart';
 import 'package:e_commerce_app/features/auth/presentation/screen/sign_up_screen.dart';
+import 'package:e_commerce_app/features/main_screen/presentation/screen/main_screen.dart';
 import 'package:e_commerce_app/features/onboarding/presentation/screen/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -26,6 +27,10 @@ class AppRoute {
       case Routes.home:
         return Transitions.buid(
           widget: HomeScreen(),
+        );
+      case Routes.mainScreen:
+        return Transitions.buid(
+          widget: MainScreen(),
         );
       case Routes.login:
         return Transitions.buid(

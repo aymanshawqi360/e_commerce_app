@@ -92,7 +92,7 @@ class _LoginFormState extends State<LoginForm> {
                       SizedBox(
                         width: 19.w,
                         child: Checkbox(
-                          activeColor: ColorsManager.gruyDark,
+                          activeColor: ColorsManager.greyDark,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(4),
                           ),

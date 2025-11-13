@@ -21,6 +21,10 @@ class AssetsManager {
   static const String living = '${_assetsSvg}living.svg';
   static const String stationery = '${_assetsSvg}stationery.svg';
   static const String star = '${_assetsSvg}star.svg';
+  static const String home = '${_assetsSvg}home_icon.svg';
+  static const String save = '${_assetsSvg}saved_page_icon.svg';
+  static const String cart = '${_assetsSvg}cart_icon.svg';
+  static const String profile = '${_assetsSvg}profile_icon.svg';
 
 
 
